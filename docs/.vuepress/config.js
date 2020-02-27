@@ -7,6 +7,7 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: '指南', link: '/guide/start' },
+      { text: '访问github', link: 'https://github.com/soneway/gdui2/' },
       { text: '表单引擎', link: 'https://soneway.github.io/form-engine/docs-dist/guide/start.html' },
     ],
     sidebar: [
