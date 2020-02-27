@@ -4,7 +4,7 @@
 
 ### 第1步: 安装依赖
 ```bash
-dnpm i @soneway/gdui2
+npm i @soneway/gdui2
 ```
 
 ### 第2步: js中注册组件
@@ -30,7 +30,7 @@ Vue.use(UI);
 
 ### 第1步: 安装 `babel-plugin-component`
 ```bash
-dnpm install babel-plugin-component -D
+npm install babel-plugin-component -D
 ```
 
 ### 第2步: 添加 babel.config/babelrc 配置：

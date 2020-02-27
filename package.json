@@ -14,7 +14,7 @@
     "vetur"
   ],
   "scripts": {
-    "up": "rm -rf node_modules && dnpm i",
+    "up": "rm -rf node_modules && npm i",
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
     "pack": "rm -rf docs-dist && npm run build && cd docs/.vuepress && mv dist ../../docs-dist",
@@ -25,8 +25,8 @@
     "dist:index": "webpack --config build/webpack.index.js",
     "dist:js": "npm run dist:components && npm run dist:utils && npm run dist:mixins && npm run dist:index",
     "dist": "rm -rf dist && npm run dist:css && npm run dist:js",
-    "pub": "npm run dist && dnpm publish",
-    "pub:beta": "npm run dist && dnpm publish --tag beta",
+    "pub": "npm run dist && npm publish --access public",
+    "pub:beta": "npm run dist && npm publish --tag beta --access public",
     "lint": "eslint src --ext js,vue --fix",
     "lint-staged": "lint-staged"
   },
