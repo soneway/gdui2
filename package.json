@@ -17,7 +17,7 @@
     "up": "rm -rf node_modules && dnpm i",
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
-    "pack": "npm run build && cd docs/.vuepress && mv dist ../../docs-dist",
+    "pack": "rm -rf docs-dist && npm run build && cd docs/.vuepress && mv dist ../../docs-dist",
     "dist:css": "gulp --gulpfile build/build-style.js",
     "dist:components": "webpack --config build/webpack.components.js",
     "dist:utils": "webpack --config build/webpack.utils.js",
