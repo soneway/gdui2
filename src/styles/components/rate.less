@@ -1,0 +1,50 @@
+@import "../utils/index";
+.gd-rate {
+  display: inline-block;
+
+  &-title {
+    padding-right: 2em;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &-item {
+    &:not(:last-of-type) {
+      padding-right: 0.8em;
+    }
+  }
+
+  &-icon {
+    .transition;
+    color: @border-color-light;
+    display: inline-block;
+    cursor: pointer;
+
+    &.active,
+    &.unhappy {
+      transform: scale(1.2, 1.2);
+    }
+
+    &.active {
+      color: @primary-color;
+    }
+
+    &.unhappy {
+      color: @error-color;
+    }
+  }
+
+  &-info {
+    padding-left: 0.8em;
+
+    &:empty {
+      display: none;
+    }
+
+    &.unhappy {
+      color: @error-color;
+    }
+  }
+}

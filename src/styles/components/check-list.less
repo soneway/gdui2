@@ -1,0 +1,153 @@
+@import "../utils/index";
+// 选项列表
+.gd-check-list {
+  display: inline-block;
+
+  // 禁用
+  &-disabled {
+    .check-list-disabled;
+  }
+
+  // 只读
+  &-readonly {
+    .readonly;
+  }
+
+  // 超大尺寸
+  &-larger {
+    .gd-check-item {
+      font-size: @check-item-font-size-larger;
+      line-height: @check-item-height-larger;
+    }
+  }
+
+  // 大尺寸
+  &-large {
+    .gd-check-item {
+      font-size: @check-item-font-size-large;
+      line-height: @check-item-height-large;
+    }
+  }
+
+  // 小尺寸
+  &-small {
+    .gd-check-item {
+      font-size: @check-item-font-size-small;
+      line-height: @check-item-height-small;
+    }
+  }
+
+}
+
+// 选项
+.gd-check-item {
+  .transition;
+  display: inline-block;
+  vertical-align: top;
+  font-size: @font-size;
+  line-height: @line-height;
+  box-shadow: 0 0 0 1px @border-color inset;
+  padding: 0 1.5em;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-right: 1em;
+  }
+
+  &:hover,
+  &.checked {
+    box-shadow: 0 0 0 1px @primary-color inset;
+
+    & > span {
+      color: @primary-color;
+    }
+  }
+
+  // 选中
+  &.checked {
+    position: relative;
+
+    &:before,
+    &:after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
+    &:before {
+      content: "";
+      border: 1em solid @primary-color;
+      border-top-color: transparent;
+      border-left-color: transparent;
+    }
+
+    // 勾符号
+    &:after {
+      .iconfont;
+      content: "\E607";
+      color: #fff;
+      line-height: 1;
+    }
+  }
+}
+
+// 按钮样式
+.gd-check-list-button {
+  border-radius: 0.5em;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px @border-color inset;
+
+  .gd-check-item {
+    margin: 0;
+    box-shadow: none;
+
+    &:not(:first-of-type) {
+      border-left: 1px solid @border-color;
+    }
+
+    &:hover {
+      color: @primary-color;
+    }
+
+    &.checked {
+      background: @primary-color;
+      color: #fff;
+
+      &, & + .gd-check-item {
+        border-color: fade(#fff, 20%);
+      }
+
+      &:after,
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  // 禁用
+  &.gd-check-list-disabled {
+    .gd-check-item {
+      &.checked {
+        background: @border-color;
+      }
+    }
+  }
+}
+
+// 单选样式
+.gd-check-list-radio {
+  .gd-radio {
+    &:not(:last-of-type) {
+      margin-right: 1em;
+    }
+  }
+}
+
+// 复选样式
+.gd-check-list-checkbox {
+  .gd-checkbox {
+    &:not(:last-of-type) {
+      margin-right: 1em;
+    }
+  }
+}

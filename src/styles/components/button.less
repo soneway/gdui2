@@ -1,0 +1,185 @@
+@import "../utils/index";
+
+.gd-button {
+  .transition;
+  height: @button-height;
+  font-weight: bold;
+  font-size: @button-font-size;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0 2em;
+  color: @primary-color;
+  background: @button-background-color;
+  border-radius: @button-border-radius;
+
+  &:hover {
+    background: darken(@button-background-color, 5%);
+    color: @primary-color-dark;
+  }
+
+  &:active {
+    box-shadow: 0 0 15px fade(#000, 10%) inset;
+  }
+
+  &-icon {
+    margin-right: 0.5em;
+  }
+
+  &-suffix-icon {
+    margin-left: 0.5em;
+  }
+
+  // 加载中
+  .gd-loading {
+    .inline-block-middle;
+    margin-right: 0.5em;
+  }
+
+  // 超大按钮
+  &-larger {
+    font-size: @button-font-size-larger;
+    height: @button-height-larger;
+  }
+
+  // 大按钮
+  &-large {
+    font-size: @button-font-size-large;
+    height: @button-height-large;
+  }
+
+  // 小按钮
+  &-small {
+    font-size: @button-font-size-small;
+    height: @button-height-small;
+  }
+
+  // 主要按钮
+  &-primary {
+    color: #fff;
+    background: @primary-color;
+
+    &:hover {
+      background: @primary-color-dark;
+      color: #fff;
+    }
+  }
+
+  // 次要按钮
+  &-thin {
+    border: 1px solid @border-color;
+    background: none;
+    color: @text-color;
+
+    &:hover {
+      color: @primary-color;
+      background: none;
+      border-color: @primary-color;
+    }
+
+    &[disabled] {
+      background: @background-color;
+    }
+  }
+
+  // 虚线按钮
+  &-dashed {
+    border: 1px dashed @border-color;
+    background: none;
+    color: @text-color;
+
+    &:hover {
+      color: @primary-color;
+      background: none;
+      border-color: @primary-color;
+    }
+
+    &[disabled] {
+      background: @background-color;
+    }
+  }
+
+  // 文字按钮
+  &-text {
+    background: none;
+    padding: 0 1em;
+
+    &:hover {
+      background: none;
+    }
+  }
+
+  // 信息按钮
+  &-info,
+  &-success,
+  &-warning,
+  &-error {
+    &, &:hover {
+      color: #fff;
+    }
+  }
+
+  &-info {
+    background: @info-color;
+
+    &:hover {
+      background: darken(@info-color, 10%);
+    }
+  }
+
+  &-success {
+    background: @success-color;
+
+    &:hover {
+      background: darken(@success-color, 10%);
+    }
+  }
+
+  &-warning {
+    background: @warning-color;
+
+    &:hover {
+      background: darken(@warning-color, 10%);
+    }
+  }
+
+  &-error {
+    background: @error-color;
+
+    &:hover {
+      background: darken(@error-color, 10%);
+    }
+  }
+
+  // 禁用
+  &[disabled] {
+    .button-disabled;
+  }
+
+  // loading
+  &-loading {
+    .button-loading;
+  }
+
+  // 单图标按钮
+  &-icon-only {
+    width: @button-height;
+    padding: 0;
+
+    .gd-button-icon {
+      margin-right: 0;
+    }
+
+    &.gd-button-larger {
+      width: @button-height-larger;
+    }
+
+    &.gd-button-large {
+      width: @button-height-large;
+    }
+
+    &.gd-button-small {
+      width: @button-height-small;
+    }
+  }
+}

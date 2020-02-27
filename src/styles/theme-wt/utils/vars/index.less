@@ -1,0 +1,99 @@
+// 字体
+@font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+
+// 字体大小
+@font-size-small: 12px;
+@font-size: 14px;
+@font-size-large: 16px;
+@font-size-larger: 18px;
+
+// 标题字体大小
+@head-font-size-small: 20px;
+@head-font-size: 22px;
+@head-font-size-large: 24px;
+@head-font-size-larger: 26px;
+
+// 行高
+@line-height-small: 30px;
+@line-height: 38px;
+@line-height-large: 48px;
+@line-height-larger: 60px;
+
+// 主题颜色
+@primary-color: #3e97df;
+@primary-color-dark: darken(@primary-color, 15%);
+
+// 辅助颜色
+@success-color: #0c9363;
+@error-color: #c10b1e;
+@warning-color: #f90;
+@info-color: #2db7f5;
+
+// 链接颜色
+@link-color: @primary-color;
+@link-hover-color: darken(@link-color, 5%);
+@link-active-color: darken(@link-color, 10%);
+
+// 字体颜色
+@text-color: #515a6e;
+@text-color-light: #808695;
+@title-color: #112534;
+// 提示文字
+@text-color-lighter: #a1abb3;
+@disabled-color: #c5c8ce;
+
+// 边框颜色
+@border-color: #ccc;
+@border-color-light: lighten(@border-color, 10%);
+@border-color-dark: darken(@border-color, 20%);
+
+// 背景颜色
+@background-color: #f2f2f2;
+@background-color-light: #f8f8f8;
+@background-color-dark: #eee;
+// 蒙层背景颜色
+@mask-background-color: fade(#000, 50%);
+
+// 间距
+@space-smaller: 9px;
+@space-small: 15px;
+@space: 24px;
+@space-large: 38px;
+@space-larger: 60px;
+
+// 动画
+@animation-duration: 0.2s;
+
+// 浮层层级
+@mask-z-index: 99;
+@box-z-index: 100;
+@page-loading-z-index: 1005;
+@modal-z-index: 1000;
+@confirm-z-index: 1010;
+@toast-z-index: 1100;
+@poptip-z-index: 11;
+
+// 圆角
+@border-radius: 6px;
+@border-radius-small: 4px;
+
+// 阴影
+@box-shadow: 0 0 5px fade(#000, 30%);
+@pop-box-shadow: 0 1px 5px fade(#000, 20%);
+
+@import "input";
+@import "button";
+@import "confirm";
+@import "page-loading";
+@import "toast";
+@import "checkbox";
+@import "radio";
+@import "modal";
+@import "form";
+@import "select";
+@import "check-list";
+@import "poptip";
+@import "steps";
+@import "header";
+@import "table";
+@import "datepicker";

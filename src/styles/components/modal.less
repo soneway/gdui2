@@ -1,0 +1,107 @@
+@import "../utils/index";
+
+.gd-modal {
+  .modal-wrapper;
+  .visible-toggle(@modal-z-index);
+
+  // 蒙层
+  &-mask {
+    .modal-mask;
+  }
+
+  // 容器
+  &-box {
+    .transition;
+    background: #fff;
+    padding: @space;
+    transform: scale(0.8, 0.8);
+    border-radius: @modal-border-radius;
+    box-shadow: @modal-box-shadow;
+    position: relative;
+    max-height: 100vh;
+    overflow: auto;
+  }
+
+  // keep-alive为false
+  &-dead {
+    &:not(.visible) {
+      &, .gd-modal-box {
+        transition: none;
+      }
+    }
+  }
+
+  // 标题
+  &-title {
+    font-size: @font-size-large;
+    margin-bottom: @space;
+    margin-top: -@space;
+    line-height: 48px;
+    position: relative;
+
+    // 下边框
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      height: 1px;
+      background: @border-color;
+      left: -99px;
+      right: -99px;
+    }
+  }
+
+  // 脚部
+  &-footer {
+    padding: 18px 0;
+    margin-bottom: -@space;
+    margin-top: @space;
+    text-align: right;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: -99px;
+      right: -99px;
+      top: 0;
+      height: 1px;
+      background: @border-color;
+    }
+
+    .gd-button {
+      margin-left: 1em;
+    }
+  }
+
+  // 关闭按钮
+  &-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: @font-size-large;
+
+    &:hover {
+      color: @error-color;
+    }
+  }
+
+  // 显示状态
+  &.visible {
+    .gd-modal-box {
+      transform: none;
+    }
+  }
+
+  // IE9特殊处理
+  .IE9 & {
+    &, &.visible {
+      .gd-modal-box {
+        .translate-center;
+      }
+    }
+  }
+}

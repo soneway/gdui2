@@ -1,0 +1,135 @@
+@import "../utils/index";
+
+.footer-tiny {
+  background: @background-color;
+  line-height: 1;
+  font-size: 14px;
+  min-width: 1200px;
+  position: relative;
+  border: 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #DFE1E2;
+  }
+
+  & .footer-wrapper {
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+
+  a {
+    color: #45484B;
+
+    &:hover {
+      color: @primary-color;
+      text-decoration: underline;
+    }
+  }
+
+  & .footer-copyright {
+    font-size: 14px;
+    color: #727475;
+    line-height: 26px;
+    text-align: left;
+    background: transparent;
+    border: 0;
+    float: right;
+    width: 65%;
+
+    & .footer-copyright--block {
+      margin-right: 20px;
+
+      &:nth-last-child(1) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  & .footer-contact {
+    float: right;
+    width: 35%;
+    padding: 0;
+
+    & .contact-left {
+      float: right;
+      text-align: right;
+      font-size: 14px;
+      line-height: 26px;
+      color: #0D1C28;
+      padding-right: 20px;
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 2px;
+        height: 40px;
+        background-color: #C5C8CA;
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%);
+        position: absolute;
+      }
+
+      & .contact-title {
+        font-weight: bold;
+        margin: 0;
+      }
+
+      & .contact-content {
+        color: #727475;
+        margin: 0;
+      }
+    }
+
+    & .contact-right {
+      float: right;
+      padding-left: 15px;
+
+      & .support-link {
+        float: none;
+        display: inline-block;
+        vertical-align: middle;
+        height: auto;
+        width: auto;
+        white-space: nowrap;
+        overflow: hidden;
+        padding-right: 0;
+
+        span {
+          display: block;
+          width: 108px;
+          height: 48px;
+          background: url(../images/cavil-grey.jpg) no-repeat center center transparent;
+          background-size: 108px 48px;
+          color: transparent;
+          text-indent: 100%;
+        }
+      }
+
+      & .support-party {
+        background: url(../images/red.png) no-repeat center center transparent;
+        background-size: 28px auto;
+        float: none;
+        display: inline-block;
+        vertical-align: middle;
+        height: 39px;
+        width: 33px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-indent: 100%;
+      }
+    }
+  }
+}

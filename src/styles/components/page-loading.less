@@ -1,0 +1,35 @@
+@import "../utils/index";
+.gd-page-loading {
+  .modal-wrapper;
+  .visible-toggle(@page-loading-z-index);
+
+  &-mask {
+    .modal-mask;
+  }
+
+  &-box {
+    width: @page-loading-width;
+    background: fade(#000, 70%);
+    color: #fff;
+    text-align: center;
+    border-radius: @page-loading-border-radius;
+    padding: @space 0;
+
+    .gd-loading {
+      font-size: 78px;
+    }
+
+    & > p {
+      padding: @space-small;
+      padding-bottom: 0;
+      line-height: 1.2;
+    }
+  }
+
+  // IE9特殊处理
+  .IE9 & {
+    &-box {
+      .translate-center;
+    }
+  }
+}

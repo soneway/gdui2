@@ -1,0 +1,61 @@
+@import "../utils/index";
+.gd-confirm {
+  .modal-wrapper;
+  .visible-toggle(@confirm-z-index);
+
+  // 蒙层
+  &-mask {
+    .modal-mask;
+  }
+
+  // 容器
+  &-box {
+    .transition;
+    width: @confirm-width;
+    text-align: center;
+    background: #fff;
+    padding: @line-height;
+    transform: scale(1.2, 1.2);
+    border-radius: @confirm-border-radius;
+    box-shadow: @confirm-box-shadow;
+  }
+
+  // 标题
+  &-title {
+    font-size: @head-font-size;
+    margin-bottom: @line-height;
+  }
+
+  // 内容
+  &-content {
+    line-height: 1.5;
+    font-size: @font-size-large;
+  }
+
+  // 脚部
+  &-footer {
+    padding-top: @line-height;
+
+    .gd-button {
+      &:not(:last-of-type) {
+        margin-right: 1em;
+      }
+    }
+  }
+
+  // 显示状态
+  &.visible {
+    .gd-confirm-box {
+      transform: none;
+    }
+  }
+
+  // IE9特殊处理
+  .IE9 & {
+    &, &.visible {
+      .gd-confirm-box {
+        .translate-center;
+      }
+    }
+  }
+}

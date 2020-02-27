@@ -1,0 +1,83 @@
+@import "../utils/index";
+.gd-tree-x {
+    line-height: 18px;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin: 8px 0;
+            white-space: nowrap;
+            outline: none;
+        }
+    }
+
+    li {
+
+        &>* {
+            vertical-align: middle;
+        }
+
+        ul {
+            padding-left: 22px;
+        }
+    }
+
+    .gd-checkbox {
+        margin-right: 0;
+        // transform: scale3d(0.8, 0.8, 1);
+    }
+
+    &-node-title {
+        display: inline-block;
+        padding: 0 4px;
+        cursor: pointer;
+        transition: all .3s;
+
+        &:hover {
+            background-color: tint(#4293f4, 90%);
+        }
+
+        &-selected,
+        &-selected:hover {
+            background-color: tint(#4293f4, 80%);
+        }
+    }
+
+    &-node-arrow {
+        display: inline-block;
+        font-size: 18px;
+        transition: all .3s;
+        vertical-align: middle;
+        cursor: pointer;
+
+        &-open {
+            transform: rotate(90deg);
+        }
+
+        &-disabled {
+            opacity: .6;
+        }
+
+        &-hidden {
+            visibility: hidden;
+        }
+    }
+
+    &-node-item {
+        &-disabled {
+
+            cursor: not-allowed !important;
+
+            & .gd-icon {
+                cursor: not-allowed !important;
+
+                &:hover{
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+@import "../utils/index";
+.gd-tabs {
+  &-nav {
+    .clearfix;
+    box-shadow: 0 -1px 0 0 @border-color-light inset;
+    font-weight: bold;
+
+    &-item {
+      .fl;
+      padding-bottom: 1em;
+      margin-right: 2em;
+      color: inherit;
+
+      &:hover {
+        color: @primary-color;
+      }
+
+      &.checked {
+        color: @primary-color;
+        box-shadow: 0 -2px 0 0 @primary-color inset;
+      }
+
+      // 禁用
+      &-disabled {
+        .disabled;
+        color: @disabled-color;
+      }
+    }
+
+    // 小尺寸
+    &-small {
+      font-size: @font-size-small;
+    }
+
+    // 大尺寸
+    &-large {
+      font-size: @font-size-large;
+    }
+
+    // 大尺寸
+    &-larger {
+      font-size: @font-size-larger;
+    }
+  }
+}
+
+.gd-tabs-pane {
+  display: none;
+
+  &-visible {
+    display: block;
+  }
+}

@@ -1,0 +1,81 @@
+@import "../utils/index";
+
+.gd-checkbox {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    input {
+      & + span {
+        box-shadow: 0 0 0 1px @primary-color;
+      }
+    }
+  }
+
+  input {
+    // 隐藏input
+    display: none;
+
+    // 未选中
+    & + span {
+      .iconfont;
+      .transition;
+      .inline-block-middle;
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      line-height: 1;
+      overflow: hidden;
+      box-shadow: 0 0 0 1px @border-color;
+      text-align: center;
+      border-radius: 0.1em;
+    }
+
+    // 选中&半选中
+    &:checked + span,
+    &[indeterminate] + span {
+      color: #fff;
+      background: @primary-color;
+      box-shadow: 0 0 0 1px @primary-color;
+    }
+
+    // 选中
+    &:checked + span:before {
+      content: "\E607";
+      // 修复该图标字符非等宽问题
+      margin-left: -0.1em;
+    }
+
+    // 半选中
+    &[indeterminate] + span:before {
+      content: "\E6D8";
+    }
+  }
+
+  // 小号
+  &-small {
+    font-size: @checkbox-size-small;
+  }
+
+  // 大号
+  &-large {
+    font-size: @checkbox-size-large;
+  }
+
+  // 特大号
+  &-larger {
+    font-size: @checkbox-size-larger;
+  }
+
+  // 禁用
+  &-disabled {
+    .checkbox-disabled;
+  }
+
+  // 只读
+  &-readonly {
+    .readonly;
+  }
+
+}

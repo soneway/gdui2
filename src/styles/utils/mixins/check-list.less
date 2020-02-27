@@ -1,0 +1,18 @@
+// 禁用
+.check-list-disabled() {
+  .disabled;
+
+  .gd-check-item {
+    color: @border-color;
+
+    &.checked {
+      box-shadow: 0 0 0 0.1em @border-color inset;
+
+      &:before {
+        border-color: @border-color;
+        border-top-color: transparent;
+        border-left-color: transparent;
+      }
+    }
+  }
+}

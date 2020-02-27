@@ -1,0 +1,15 @@
+
+@import "../utils/index";
+@import "../animation/index";
+
+.gd-loading {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  /*圆环用border生成*/
+  border: 0.08em solid fade(#000, 10%);
+  border-top-color: currentColor !important;
+  /*动画*/
+  animation: ani-circle 0.8s linear infinite;
+}

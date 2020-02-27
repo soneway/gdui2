@@ -1,0 +1,82 @@
+.fl() {
+  float: left;
+}
+
+.fr() {
+  float: right;
+}
+
+.clearfix() {
+  &:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+.iconfont() {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// 禁用
+.disabled() {
+  pointer-events: none;
+}
+
+// 只读
+.readonly() {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+// 全屏
+.full(@position: fixed) {
+  position: @position;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+// 显示/隐藏切换
+.visible-toggle(@z-index: auto) {
+  z-index: @z-index;
+  opacity: 0;
+  visibility: hidden;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// 通过translate居中
+.translate-center(@position: absolute) {
+  position: @position;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 动画
+.transition(@property: all; @duration: @animation-duration) {
+  transition: @property @duration;
+}
+
+// inline-block居中
+.inline-block-middle() {
+  // 解决: vertical-align / line-block 意外导致高度变大
+  margin-top: -0.2em;
+  vertical-align: middle;
+}
+
+@import "input";
+@import "button";
+@import "modal";
+@import "checkbox";
+@import "radio";
+@import "select";
+@import "check-list";

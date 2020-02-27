@@ -1,0 +1,25 @@
+@import "../utils/index";
+
+.gd-breadcrumb {
+  &-border {
+    border-bottom: 1px dashed @border-color;
+    padding-bottom: 0.6em;
+  }
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: @primary-color;
+    }
+  }
+
+  & > span:last-child &-item-separator {
+    display: none;
+  }
+
+  &-item-separator {
+    margin: 0 8px;
+    color: @text-color-light;
+  }
+}

@@ -1,0 +1,376 @@
+@import "../utils/index";
+.gd-datepicker {
+  position: relative;
+  display: inline-block;
+  width: @datepicker-width;
+
+  &.disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  &-small {
+    .gd-datepicker-input {
+      height: @input-height-small;
+      font-size: @font-size-small;
+    }
+  }
+
+  &-large {
+    .gd-datepicker-input {
+      height: @input-height-large;
+      font-size: @font-size-large;
+    }
+  }
+
+  &-larger {
+    .gd-datepicker-input {
+      height: @input-height-larger;
+      font-size: @font-size-larger;
+    }
+  }
+}
+
+.gd-datepicker-range {
+  width: @datepicker-range-width;
+}
+
+.gd-datepicker-popup {
+  position: absolute;
+  margin: 1px 0;
+  background-color: #fff;
+  box-shadow: @pop-box-shadow;
+  z-index: @poptip-z-index;
+  border-radius: @border-radius;
+}
+
+.gd-datepicker-input-wrapper {
+  position: relative;
+
+  .gd-datepicker-clear-wrapper {
+    display: none;
+  }
+
+  &:hover {
+    .gd-datepicker-clear-wrapper {
+      display: block;
+    }
+
+    .gd-datepicker-clear-wrapper + .gd-datepicker-input-append {
+      display: none;
+    }
+  }
+}
+
+.gd-datepicker-input {
+  display: inline-block;
+  width: 100%;
+  height: @input-height;
+  padding-left: 0.9em;
+  font-size: 14px;
+  background-color: #fff;
+  border: 1px solid @border-color;
+  border-radius: 4px;
+
+  &:disabled,
+  &.disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-ms-clear {
+    display: none;
+  }
+}
+
+.gd-datepicker-input-append {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  padding: 6px;
+}
+
+.gd-datepicker-input-icon {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  font-style: normal;
+  color: #555;
+  text-align: center;
+  cursor: pointer;
+}
+
+.gd-datepicker-calendar-icon {
+  width: 100%;
+  height: 100%;
+  color: #555;
+  stroke-width: 8px;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.gd-datepicker-clear-icon {
+  &::before {
+    display: inline-block;
+    content: '\2716';
+    vertical-align: middle;
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+  }
+}
+
+.gd-datepicker-range-wrapper {
+  width: 248px * 2;
+  overflow: hidden;
+}
+
+.gd-datepicker-shortcuts-wrapper {
+  text-align: left;
+  padding: 0 12px;
+  line-height: 34px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+  .gd-datepicker-shortcuts {
+    background: none;
+    outline: none;
+    border: 0;
+    color: #48576a;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &:hover {
+      color: mix(#fff, @primary-color, 20%);
+    }
+
+    &:after {
+      content: '|';
+      margin: 0 10px;
+      color: #48576a;
+    }
+  }
+}
+
+.gd-datepicker-footer {
+  padding: 4px;
+  clear: both;
+  text-align: right;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.gd-datepicker-btn {
+  font-size: 12px;
+  line-height: 1;
+  padding: 7px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+}
+
+.gd-datepicker-btn-confirm {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #73879c;
+
+  &:hover {
+    color: #1284e7;
+    border-color: #1284e7;
+  }
+}
+
+// 日历组件
+.gd-datepicker-calendar {
+  float: left;
+  color: @text-color;
+  padding: 6px 12px;
+  font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, sans-serif;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.gd-datepicker-calendar-header {
+  padding: 0 4px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  overflow: hidden;
+
+  > a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      color: mix(#fff, @primary-color, 20%);
+    }
+  }
+
+}
+
+.gd-datepicker-icon-last-month,
+.gd-datepicker-icon-next-month {
+  padding: 0 6px;
+  font-size: 20px;
+  line-height: 30px;
+  user-select: none;
+}
+
+.gd-datepicker-icon-last-month {
+  float: left;
+}
+
+.gd-datepicker-icon-next-month {
+  float: right;
+}
+
+.gd-datepicker-icon-last-year {
+  .gd-datepicker-icon-last-month;
+}
+
+.gd-datepicker-icon-next-year {
+  .gd-datepicker-icon-next-month;
+}
+
+.gd-datepicker-calendar-content {
+  width: 32px * 7;
+  height: 32px * 7;
+
+  .cell {
+    vertical-align: middle;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #eaf8fe;
+    }
+
+    &.actived {
+      color: #fff;
+      background-color: @primary-color;
+    }
+
+    &.inrange {
+      background-color: #eaf8fe;
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      color: #ccc;
+      background-color: #f3f3f3;
+    }
+  }
+}
+
+.gd-datepicker-panel {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.gd-datepicker-panel-date {
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  td,
+  th {
+    font-size: 12px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  td {
+    &.today {
+      color: mix(#fff, @primary-color, 10%);
+    }
+
+    &.last-month,
+    &.next-month {
+      color: #ddd;
+    }
+  }
+}
+
+.gd-datepicker-panel-year {
+  padding: 7px 0;
+
+  .cell {
+    display: inline-block;
+    width: 40%;
+    margin: 1px 5%;
+    line-height: 40px;
+  }
+}
+
+.gd-datepicker-panel-month {
+  .cell {
+    display: inline-block;
+    width: 30%;
+    line-height: 40px;
+    margin: 8px 1.5%;
+  }
+}
+
+.gd-datepicker-time-list {
+  position: relative; // 定位 offsetParent
+  float: left;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+  overflow-y: auto;
+
+  .gd-datepicker-time-picker-item {
+    display: block;
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  &:first-child {
+    border-left: 0;
+  }
+
+  .cell {
+    width: 100%;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+  }
+
+  // 滚动条滑块
+  &::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}

@@ -1,0 +1,16 @@
+// 禁用
+.checkbox-disabled() {
+  .disabled;
+  color: @disabled-color;
+
+  input {
+    // 未选中&选中&半选中
+    & + span,
+    &:checked + span,
+    &[indeterminate] + span {
+      background: @background-color;
+      box-shadow: 0 0 0 1px @border-color;
+      color: @border-color;
+    }
+  }
+}

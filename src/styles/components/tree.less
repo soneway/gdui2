@@ -1,0 +1,63 @@
+@import "../utils/index";
+.gd-tree {
+  line-height: 18px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 8px 0;
+      white-space: nowrap;
+      outline: none;
+    }
+  }
+
+  li {
+
+    & > * {
+      vertical-align: middle;
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+  }
+
+  &-node-title {
+    display: inline-block;
+    padding: 0 4px;
+    cursor: pointer;
+    transition: all @animation-duration;
+
+    &:hover {
+      background-color: tint(@primary-color, 90%);
+    }
+
+    &-selected,
+    &-selected:hover {
+      background-color: tint(@primary-color, 80%);
+    }
+  }
+
+  &-node-arrow {
+    display: inline-block;
+    font-size: 18px;
+    transition: all @animation-duration;
+    vertical-align: middle;
+    cursor: pointer;
+
+    &-open {
+      transform: rotate(90deg);
+    }
+
+    &-disabled {
+      .disabled;
+    }
+
+    &-hidden {
+      visibility: hidden;
+    }
+  }
+}

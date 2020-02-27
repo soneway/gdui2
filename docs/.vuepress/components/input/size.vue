@@ -1,0 +1,19 @@
+<template>
+  <div class="input-base">
+    <gd-input
+      size="larger"
+      placeholder="请输入">
+    </gd-input>
+    <gd-input
+      size="large"
+      placeholder="请输入">
+    </gd-input>
+    <gd-input
+      placeholder="请输入">
+    </gd-input>
+    <gd-input
+      size="small"
+      placeholder="请输入">
+    </gd-input>
+  </div>
+</template>

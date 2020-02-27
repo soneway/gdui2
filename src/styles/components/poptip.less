@@ -1,0 +1,153 @@
+@import "../utils/index";
+
+.gd-poptip {
+  position: relative;
+  display: inline-block;
+
+  &-slot {
+    display: inline-block;
+  }
+
+  &-pop {
+    .visible-toggle(@poptip-z-index);
+    .transition;
+    position: absolute;
+    width: @poptip-width;
+  }
+
+  &-content {
+    box-shadow: @pop-box-shadow;
+    border: 1px solid #f3f3f3;
+    padding: @space-small;
+    border-radius: @border-radius-small;
+    background: #fff;
+  }
+
+  // tip在上边
+  &-top {
+    .gd-poptip-pop {
+      left: 50%;
+      top: 0;
+      padding-bottom: @poptip-arrow-width + @poptip-arrow-space;
+      transform: translate(-50%, -100%);
+    }
+
+    .gd-poptip-arrow {
+      border-top-color: @border-color-light;
+      bottom: @poptip-arrow-space;
+      left: 50%;
+      margin-left: -@poptip-arrow-width;
+
+      &, &:after {
+        border-bottom-width: 0;
+      }
+
+      &:after {
+        border-top-color: #fff;
+        margin-left: -@poptip-arrow-width;
+        margin-top: -@poptip-arrow-width;
+        top: -1px;
+      }
+    }
+  }
+
+  // tip在右边
+  &-right {
+    .gd-poptip-pop {
+      left: 100%;
+      top: 50%;
+      padding-left: @poptip-arrow-width + @poptip-arrow-space;
+      transform: translate(0, -50%);
+    }
+
+    .gd-poptip-arrow {
+      border-right-color: @border-color-light;
+      top: 50%;
+      left: @poptip-arrow-space;
+      margin-top: -@poptip-arrow-width;
+
+      &, &:after {
+        border-left-width: 0;
+      }
+
+      &:after {
+        border-right-color: #fff;
+        margin-top: -@poptip-arrow-width;
+        left: 1px;
+      }
+    }
+  }
+
+  // tip在下边
+  &-bottom {
+    .gd-poptip-pop {
+      left: 50%;
+      top: 100%;
+      padding-top: @poptip-arrow-width + @poptip-arrow-space;
+      transform: translate(-50%, 0);
+    }
+
+    .gd-poptip-arrow {
+      border-bottom-color: @border-color-light;
+      top: @poptip-arrow-space;
+      left: 50%;
+      margin-left: -@poptip-arrow-width;
+
+      &, &:after {
+        border-top-width: 0;
+      }
+
+      &:after {
+        border-bottom-color: #fff;
+        margin-left: -@poptip-arrow-width;
+        top: 1px;
+      }
+    }
+  }
+
+  // tip在左边
+  &-left {
+    .gd-poptip-pop {
+      left: 0;
+      top: 50%;
+      padding-right: @poptip-arrow-width + @poptip-arrow-space;
+      transform: translate(-100%, -50%);
+    }
+
+    .gd-poptip-arrow {
+      border-left-color: @border-color-light;
+      top: 50%;
+      right: @poptip-arrow-space;
+      margin-top: -@poptip-arrow-width;
+
+      &, &:after {
+        border-right-width: 0;
+      }
+
+      &:after {
+        border-left-color: #fff;
+        margin-top: -@poptip-arrow-width;
+        margin-left: -@poptip-arrow-width;
+        left: -1px;
+      }
+    }
+  }
+
+  &-arrow {
+    filter: drop-shadow(0 2px 12px rgba(0, 0, 0, .03));
+
+    &, &:after {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-color: transparent;
+      border-style: solid;
+      border-width: @poptip-arrow-width;
+    }
+
+    &:after {
+      content: "";
+    }
+  }
+
+}

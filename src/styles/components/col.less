@@ -1,0 +1,15 @@
+@import "../utils/index";
+
+.gd-col {
+  .fl;
+
+  .loop(@n) when (@n > 0) {
+    &-span@{n} {
+      width: (@n/12)*100%;
+    }
+    //循环调用自身
+    .loop((@n - 1));
+  }
+
+  .loop(12);
+}

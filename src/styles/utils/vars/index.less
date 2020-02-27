@@ -1,0 +1,109 @@
+// 字体
+@font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+
+// 说明文字
+@font-size-small: 12px;
+// 正文文字
+@font-size: 14px;
+// 表格二级标题
+@font-size-large: 16px;
+// 表格一级标题
+@font-size-larger: 18px;
+
+// 页面二级标题
+@head-font-size-small: 20px;
+// 页面一级标题
+@head-font-size: 24px;
+// 二级数据
+@head-font-size-large: 32px;
+// 一级数据
+@head-font-size-larger: 42px;
+
+// 行高
+@line-height-small: 24px;
+@line-height: 32px;
+@line-height-large: 40px;
+@line-height-larger: 48px;
+
+// 主题颜色
+@primary-color: #4293f4;
+@primary-color-dark: #3762bf;
+
+// 辅助颜色
+@success-color: #0c9363;
+@error-color: #f13939;
+@warning-color: #faad14;
+@info-color: @primary-color;
+
+// 链接颜色
+@link-color: @primary-color;
+@link-hover-color: darken(@link-color, 5%);
+@link-active-color: darken(@link-color, 10%);
+
+// 字体颜色
+// 一级文字
+@title-color: #2e3133;
+// 二级文字
+@text-color: #5c6166;
+// 三级文字
+@text-color-light: #8a9299;
+// 提示文字
+@text-color-lighter: #a1abb3;
+// 禁用文字
+@disabled-color: #9ea4a9;
+
+// 边框颜色
+@border-color: #cfd2d4;
+@border-color-light: lighten(@border-color, 10%);
+@border-color-dark: darken(@border-color, 20%);
+
+// 背景颜色
+@background-color: #f8f8f8;
+@background-color-light: lighten(@background-color, 10%);
+@background-color-dark: darken(@background-color, 10%);
+// 蒙层背景颜色
+@mask-background-color: fade(#000, 50%);
+
+// 间距
+@space-smaller: 9px;
+@space-small: 15px;
+@space: 24px;
+@space-large: 38px;
+@space-larger: 60px;
+
+// 动画
+@animation-duration: 0.2s;
+
+// 浮层层级
+@mask-z-index: 99;
+@box-z-index: 100;
+@page-loading-z-index: 1005;
+@modal-z-index: 1000;
+@confirm-z-index: 1010;
+@toast-z-index: 1100;
+@poptip-z-index: 11;
+
+// 圆角
+@border-radius: 2px;
+@border-radius-small: 1px;
+
+// 阴影
+@box-shadow: 0 0 5px fade(#000, 30%);
+@pop-box-shadow: 0 3px 11px 0 #f3f3f4;
+
+@import "input";
+@import "button";
+@import "confirm";
+@import "page-loading";
+@import "toast";
+@import "checkbox";
+@import "radio";
+@import "modal";
+@import "form";
+@import "select";
+@import "check-list";
+@import "poptip";
+@import "steps";
+@import "header";
+@import "table";
+@import "datepicker";

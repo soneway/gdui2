@@ -1,0 +1,94 @@
+@import "../utils/index";
+
+.gd-form {
+  // 竖向表单, IE降级为竖向表单
+  &-vertical,
+  .IE9 & {
+    .gd-form-item {
+      display: block;
+    }
+
+    .gd-form-item-label {
+      display: block;
+      margin-bottom: 0.5em;
+      width: auto;
+      clear: left;
+    }
+  }
+
+  // 小号
+  &-small {
+    font-size: @font-size-small;
+  }
+
+  // 大号
+  &-large {
+    font-size: @font-size-large;
+  }
+
+  // 特大号
+  &-larger {
+    font-size: @font-size-larger;
+  }
+}
+
+.gd-form-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2em;
+
+  // 标题
+  &-label {
+    width: @form-label-width;
+    padding-right: 1em;
+  }
+
+  // 内容
+  &-content {
+    flex: 1;
+    position: relative;
+
+    .gd-input {
+      width: 100%;
+    }
+  }
+
+  // 出错信息
+  &-error-msg {
+    position: absolute;
+    font-size: 0.8em;
+    padding-top: 0.5em;
+    color: @error-color;
+    display: none;
+  }
+
+  // 验证出错
+  &-error {
+    & > .gd-form-item-content {
+
+      // 显示出错信息
+      & > .gd-form-item-error-msg {
+        display: block;
+      }
+
+      & > .gd-input {
+        input,
+        textarea {
+          border-color: @error-color;
+        }
+      }
+    }
+  }
+
+  // 必填
+  &-required {
+
+    // 星号标识
+    .gd-form-item-label:after {
+      .iconfont;
+      content: '\E601';
+      color: @error-color;
+    }
+  }
+
+}

@@ -1,0 +1,18 @@
+// 禁用
+.radio-disabled() {
+  .disabled;
+  color: @disabled-color;
+
+  input {
+    // 未选中状态
+    & + span {
+      background: @background-color;
+    }
+
+    // 选中状态
+    &:checked + span {
+      background: @border-color;
+      box-shadow: 0 0 0 0.2em #fff inset, 0 0 0 1px @border-color;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<template>
+  <div class="icon-base">
+    <gd-icon
+      icon="search"
+      size="small">
+    </gd-icon>
+    <gd-icon
+      icon="search">
+    </gd-icon>
+    <gd-icon
+      icon="search"
+      size="large">
+    </gd-icon>
+    <gd-icon
+      icon="search"
+      size="larger">哈哈哈
+    </gd-icon>
+  </div>
+</template>

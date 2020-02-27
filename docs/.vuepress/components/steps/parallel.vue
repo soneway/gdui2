@@ -1,0 +1,24 @@
+<template>
+  <div>
+    <gd-steps
+      :active="1"
+      type="parallel">
+      <gd-step
+        title="第一步"
+        desc="这是一段相关的描述">
+      </gd-step>
+      <gd-step
+        title="第二步"
+        desc="这是一段相关的描述">
+      </gd-step>
+      <gd-step
+        title="第三步"
+        desc="这是一段相关的描述">
+      </gd-step>
+      <gd-step
+        title="第四步"
+        desc="这是一段相关的描述">
+      </gd-step>
+    </gd-steps>
+  </div>
+</template>

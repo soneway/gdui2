@@ -1,0 +1,263 @@
+@import "../utils/index";
+
+.gd-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: @font-size;
+
+  th,
+  td {
+    border-bottom: 1px solid @border-color-light;
+    text-align: start;
+
+    // 无数据占位符
+    &.gd-table-empty-text {
+      text-align: center;
+    }
+
+    // 排除第1列和最后1列
+    &:not(:first-child):not(:last-child) {
+      padding-left: 0.3em;
+      padding-right: 0.3em;
+    }
+  }
+
+  td {
+
+    // 最后1列右对齐
+    &:last-child:not(:first-child) {
+      text-align: right;
+    }
+
+    &[rowspan="0"],
+    &[colspan="0"] {
+      display: none;
+    }
+  }
+
+  thead {
+
+    td,
+    th {
+      color: @text-color-light;
+      padding-bottom: 1em;
+    }
+  }
+
+  tbody {
+    line-height: 1.2;
+
+    tr:hover {
+      background: fade(@primary-color, 4%);
+    }
+
+    th,
+    td {
+      height: @table-cell-height;
+      padding-top: 0.6em;
+      padding-bottom: 0.6em;
+    }
+  }
+
+  // 带边框
+  &-border {
+
+    th,
+    td {
+      border: 1px solid @border-color-light;
+    }
+
+    thead {
+
+      th,
+      td {
+        height: @table-cell-height;
+        padding: 0.6em 1em;
+      }
+
+
+      th {
+        border-right: 1px solid @border-color-light;
+      }
+    }
+
+    tbody {
+
+      th,
+      td {
+        padding: 0.6em 1em;
+      }
+    }
+
+    tr:last-child:not(:first-child) {
+
+      // 最后1列右对齐
+      &:last-child:not(:first-child) {
+        text-align: right;
+      }
+    }
+  }
+
+  // 带斑马纹
+  &-stripe {
+    tr:nth-child(2n) {
+      background: @background-color-light;
+    }
+  }
+
+  // 小尺寸
+  &-small {
+    font-size: @font-size-small;
+
+    tbody,
+    &.gd-table-border {
+
+      th,
+      td {
+        height: @table-cell-height-small;
+      }
+    }
+  }
+
+  // 大尺寸
+  &-large {
+    font-size: @font-size-large;
+
+    tbody,
+    &.gd-table-border {
+
+      th,
+      td {
+        height: @table-cell-height-large;
+      }
+    }
+  }
+
+  // 超大尺寸
+  &-larger {
+    font-size: @font-size-larger;
+
+    tbody,
+    &.gd-table-border {
+
+      th,
+      td {
+        height: @table-cell-height-larger;
+      }
+    }
+  }
+
+  // IE9中使用默认值, 以免导致table中的box-shadow失效
+  .IE9 & {
+    border-collapse: separate;
+  }
+
+  &-scroll {
+
+    &-wrapper {
+      position: relative;
+
+      & tbody tr {
+        &.hover {
+          background: fade(@primary-color, 4%);
+        }
+      }
+
+      & .gd-table-border {
+        border-top: 1px solid @border-color-light;
+        border-left: 1px solid @border-color-light;
+
+        & th,
+        & td {
+          border-right: 1px solid @border-color-light;
+          border-bottom: 1px solid @border-color-light;
+          border-top: 0;
+          border-left: 0;
+        }
+      }
+
+
+      & .gd-table-scroll-content,
+      & .gd-table-scroll-side-inner {
+
+        & table {
+          border-top: 0;
+        }
+      }
+
+      & th,
+      & td {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+      }
+
+    }
+
+    &-content {
+      & td {
+        &:nth-last-child(1) {
+          padding-right: 15px;
+        }
+      }
+    }
+
+    &-header {
+      overflow: scroll;
+      scrollbar-color: transparent transparent;
+
+      &::-webkit-scrollbar,
+      &::-webkit-scrollbar-thumb:horizontal,
+      &::-webkit-scrollbar-thumb:vertical {
+        background-color: transparent;
+      }
+    }
+
+    &-left,
+    &-right {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      overflow: hidden;
+      background: #fff;
+      transition: box-shadow .3s ease;
+
+      &.no-shadow {
+        box-shadow: none;
+      }
+    }
+
+    &-left {
+      left: 0;
+      box-shadow: 6px 0 6px -4px rgba(0, 0, 0, 0.15);
+
+      & th:last-of-type,
+      & td:last-of-type {
+        text-align: left;
+      }
+    }
+
+    &-right {
+      right: 0;
+      box-shadow: -6px 0 6px -4px rgba(0, 0, 0, 0.15);
+
+    }
+
+    &-side-inner {
+      overflow-y: scroll;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      // border-top: 1px solid transparent;
+      scrollbar-color: transparent transparent;
+
+      &::-webkit-scrollbar,
+      &::-webkit-scrollbar-thumb:horizontal,
+      &::-webkit-scrollbar-thumb:vertical {
+        background-color: transparent;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,82 @@
+@import "../utils/index";
+
+.gd-pagination {
+  .clearfix;
+
+  & > * {
+    .fl;
+
+    &:not(:last-child) {
+      margin-right: 0.5em;
+    }
+  }
+
+  & > span {
+    font-size: @font-size;
+    line-height: @line-height;
+    min-width: 1.8em;
+    text-align: center;
+  }
+
+  // 跳转页码输入框
+  .gd-input {
+    width: 5em;
+
+    input {
+      text-align: center;
+    }
+  }
+
+  // 跳转按钮
+  &-to-button {
+    padding: 0 1em;
+  }
+
+  // 页码按钮
+  &-button {
+    padding: 0 0.7em;
+    min-width: @button-height;
+
+    &-active {
+      background: @primary-color;
+      color: #fff;
+    }
+  }
+
+  // 小尺寸
+  &-small {
+    & > span {
+      font-size: @font-size-small;
+      line-height: @line-height-small;
+    }
+
+    .gd-pagination-button {
+      min-width: @button-height-small;
+    }
+  }
+
+  // 大尺寸
+  &-large {
+    & > span {
+      font-size: @font-size-large;
+      line-height: @line-height-large;
+    }
+
+    .gd-pagination-button {
+      min-width: @button-height-large;
+    }
+  }
+
+  // 超大尺寸
+  &-larger {
+    & > span {
+      font-size: @font-size-larger;
+      line-height: @line-height-larger;
+    }
+
+    .gd-pagination-button {
+      min-width: @button-height-larger;
+    }
+  }
+
+}

@@ -1,0 +1,49 @@
+@import "../utils/index";
+.gd-tag{
+    display: inline-block;
+    padding: 6px;
+    padding-left: 12px;
+    background: #f8f8f8;
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    margin-right: 0.5em;
+    &-larger{
+        font-size: 18px;
+    }
+    &-large{
+        font-size: 16px;
+    }
+    &-default{
+        font-size: 14px;
+    }
+    &-small{
+        font-size: 12px;
+    }
+    &-info{
+        background: @primary-color;
+    }
+    &-success{
+        background: @success-color;
+    }
+    &-error{
+        background: @error-color;
+    }
+    &-warning{
+        background: @warning-color;
+    }
+    &-info,&-success,&-error,&-warning{
+        color:#f8f8f8;
+    }
+    .icon-close{
+        display: inline-block;
+        margin-left: 0.5em;
+        background: rgba(0, 0, 0, 0.2);
+        color: #fff;
+        cursor: pointer;
+        border-radius: 1em;
+        padding: 1px;
+        &:hover{
+            background: rgba(0, 0, 0, 0.4);
+        }
+    }
+}

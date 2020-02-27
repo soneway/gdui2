@@ -1,0 +1,38 @@
+@import "../utils/index";
+.gd-toast {
+  .visible-toggle(@toast-z-index);
+  position: fixed;
+  top: @toast-top;
+  left: 50%;
+  background: #fff;
+  box-shadow: @toast-box-shadow;
+  border-radius: @toast-border-radius;
+  padding: 0.9em 2.8em;
+  transform: translate(-50%, -100%);
+
+  &.visible {
+    .transition;
+    transform: translate(-50%, 0);
+  }
+
+  & > .gd-icon {
+    font-weight: bold;
+  }
+
+  &-success {
+    color: @success-color;
+  }
+
+  &-error {
+    color: @error-color;
+  }
+
+  &-info {
+    color: @info-color;
+  }
+
+  &-warning {
+    color: @warning-color;
+  }
+
+}

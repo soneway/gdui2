@@ -1,0 +1,84 @@
+@import "../utils/index";
+// 时间轴项
+.gd-timeline-item {
+  line-height: 1.5em;
+  position: relative;
+  display: flex;
+
+  &:not(:last-child) {
+    padding-bottom: 1.4em;
+  }
+
+  // 线条
+  &-tail {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: -1em;
+    width: 1px;
+    transform: translate(-50%);
+    background: @border-color-light;
+  }
+
+  // 时间点
+  &-dot {
+    position: absolute;
+    top: 0.75em;
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  &:first-child &-tail {
+    top: 0.5em;
+  }
+
+  &:last-child &-tail {
+    display: none;
+  }
+  // 默认时间轴点
+  &-dot__default {
+    content: "";
+    width: 0.5em;
+    height: 0.5em;
+    background: @border-color;
+    border-radius: 50%;
+  }
+
+  // 时间
+  &-time {
+    padding-left: 1.3em;
+    white-space: nowrap;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  // 右边
+  &-right {
+    flex: 1;
+    padding-left: 1.3em;
+  }
+
+  // 详情
+  &-detail {
+    &:empty {
+      display: none;
+    }
+  }
+
+  // 选中
+  &-active {
+    .gd-timeline-item-dot__default {
+      background: @primary-color;
+    }
+
+    // 内容
+    .gd-timeline-item-content {
+      font-weight: bold;
+      color: @title-color;
+      font-size: 1.2em;
+    }
+  }
+}

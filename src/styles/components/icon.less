@@ -1,0 +1,39 @@
+@import "../utils/index";
+@import "../fonts/iconfont.css";
+
+.gd-icon {
+
+  &:before {
+    .iconfont;
+  }
+
+  & > span {
+    font-style: normal;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  // 有图标
+  &-with-icon {
+    & > span {
+      margin-left: 0.35em;
+    }
+  }
+
+  // 超大尺寸
+  &-larger {
+    font-size: @font-size-larger;
+  }
+
+  // 大尺寸
+  &-large {
+    font-size: @font-size-large;
+  }
+
+  // 小尺寸
+  &-small {
+    font-size: @font-size-small;
+  }
+}

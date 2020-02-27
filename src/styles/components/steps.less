@@ -1,0 +1,144 @@
+@import "../utils/index";
+.gd-steps {
+  .clearfix;
+}
+
+.gd-step {
+  .fl;
+  position: relative;
+
+  // 圆形标识
+  &-dot {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.6em;
+    height: 1.6em;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 1.6;
+    text-align: center;
+    background: @primary-color;
+
+    &:before {
+      .iconfont;
+      content: '\E607';
+    }
+  }
+
+  // 标题
+  &-title {
+    margin-top: 2.2em;
+    color: @text-color;
+    font-size: inherit;
+    position: relative;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  // 描述
+  &-desc {
+    margin-top: 0.5em;
+    font-size: 0.8em;
+    color: @text-color-light;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  // 模拟线
+  &:not(:last-of-type):before {
+    content: "";
+    position: absolute;
+    top: 0.8em;
+    left: 2.5em;
+    right: 0.5em;
+    height: 1px;
+    background: @primary-color;
+  }
+
+  // 选中项
+  &.active {
+
+    // 当前项及后面的项
+    &, & ~ .gd-step {
+      .gd-step-dot {
+        box-shadow: none;
+        color: #fff;
+
+        // 数字
+        &:before {
+          content: attr(data-index);
+        }
+      }
+
+      // 线
+      &:before {
+        background: @border-color;
+      }
+    }
+
+    // 当前项
+    & {
+      .gd-step-dot {
+        background: @primary-color;
+        box-shadow: 0 0 0 2px #fff, 0 0 0 3px @primary-color;
+      }
+
+      // 标题
+      .gd-step-title {
+        color: @title-color;
+      }
+    }
+
+    // 后面的项
+    & ~ .gd-step {
+      .gd-step-dot {
+        background: @text-color-light;
+      }
+
+      // 标题
+      .gd-step-title {
+        color: @text-color-light;
+      }
+    }
+  }
+
+  // 小尺寸
+  &-small {
+    font-size: @font-size-small;
+  }
+
+  // 大尺寸
+  &-large {
+    font-size: @font-size-large;
+  }
+
+  // 超大尺寸
+  &-larger {
+    font-size: @font-size-larger;
+  }
+
+  // 标题与图标水平的样式
+  &-parallel {
+    padding-left: 2.1em;
+
+    .gd-step-title {
+      display: inline-block;
+      margin-top: 0;
+      padding-right: 0.5em;
+      line-height: 1.6em;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      background: #fff;
+    }
+
+    .gd-step-desc {
+      margin-top: 0;
+    }
+  }
+
+}

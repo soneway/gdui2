@@ -1,0 +1,53 @@
+
+code,
+kbd,
+pre,
+samp {
+  font-family: Consolas, Menlo, Courier, monospace;
+}
+
+a {
+  .transition;
+  color: @link-color;
+  background: transparent;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    color: @link-hover-color;
+  }
+
+  &:active {
+    color: @link-active-color;
+  }
+
+  &:active,
+  &:hover {
+    outline: 0;
+    text-decoration: none;
+  }
+}
+
+h1, h2, h3, h4 {
+  color: @title-color;
+}
+
+body {
+  font-family: @font-family;
+  font-size: @font-size;
+  line-height: 1;
+  color: @text-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// 数字输入框样式
+input[type="number"] {
+  -moz-appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}

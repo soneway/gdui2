@@ -1,0 +1,60 @@
+@import "../utils/index";
+.gd-header {
+  background: #fff;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  height: @header-height;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &-left {
+    line-height: @line-height;
+
+    & > a {
+      .fl;
+      cursor: auto;
+      color: inherit;
+
+      &[href] {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-title {
+    h1 {
+      font-size: @head-font-size;
+    }
+
+    &:not(:last-child) {
+      padding-right: @space-small;
+      margin-right: @space-small;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        bottom: 10px;
+        right: 0;
+        width: 1px;
+        background: @border-color;
+      }
+    }
+  }
+
+  &-logo {
+    padding-left: 44px;
+    background: url(../images/logo.png) left center no-repeat;
+    background-size: 32px 32px;
+  }
+
+  &-subtitle {
+    h2 {
+      font-size: @font-size-larger;
+    }
+  }
+}

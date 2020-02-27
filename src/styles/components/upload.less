@@ -1,0 +1,176 @@
+@import "../utils/index";
+.gd-upload {
+  &-input {
+    border: 1px solid #e2e2e2;
+    padding: 1.2em 1em;
+  }
+
+  &-button {
+    position: relative;
+    font-size: @font-size;
+    color: @primary-color;
+
+    input {
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+    }
+  }
+
+  &-uploaded {
+    @_height: 58px;
+    @_borderColor: #e2e2e2;
+    @_right_1_width: 140px;
+    @_right_2_width: 100px;
+
+    min-height: @_height + 2;
+    border: 1px solid @_borderColor;
+    list-style: none;
+
+    &-item {
+      min-height: @_height;
+      //border-bottom: 1px solid @_borderColor;
+      font-size: @font-size;
+      padding: 0 1em;
+      list-style: none;
+      width: calc(100% - @_right_1_width - @_right_2_width);
+      position: relative;
+      .clearfix;
+
+      &:before {
+        content: "";
+        height: 1px;
+        position: absolute;
+        left: 0;
+        right: (@_right_1_width + @_right_2_width) * -1;
+        bottom: 0;
+        background-color: @_borderColor;
+      }
+
+      &:last-child {
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    &-main,
+    &-size {
+      float: left;
+      color: #383838;
+    }
+
+    &-main {
+      width: 100%;
+      padding: 1em 0;
+      float: left;
+    }
+
+    &-size {
+      float: right;
+      width: @_right_2_width;
+      line-height: @_height;
+      margin-right: @_right_2_width * -1;
+    }
+
+    &-operate {
+      float: right;
+      width: @_right_1_width;
+      color: @primary-color;
+      line-height: @_height;
+      text-align: right;
+      padding: 0 4px;
+      cursor: pointer;
+      margin-right: (@_right_1_width + @_right_2_width) * -1;
+      font-size: 0;
+    }
+
+    &-name {
+      height: 20px;
+      line-height: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 4px;
+    }
+
+    &-stats {
+      min-height: 14px;
+      font-size: 14px;
+      line-height: 1;
+      .clearfix;
+    }
+
+    &-progress {
+      width: 300px;
+      height: 6px;
+      margin-top: 5px;
+      float: left;
+      font-size: 0;
+      background-color: #F1F2F3;
+      overflow: hidden;
+      margin-right: 8px;
+    }
+
+    &-bar {
+      width: 0;
+      height: 6px;
+      display: block;
+      font-size: 0;
+      background-color: @primary-color;
+    }
+
+    &-num {
+      float: left;
+      color: #777;
+    }
+
+    &-success {
+      color: #0C9363;
+    }
+
+    &-fail {
+      color: #FF133D;
+    }
+
+    &-text {
+      font-size: 16px;
+      margin: 0 10px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &-delete {
+    font-size: @font-size;
+    color: @primary-color;
+    cursor: pointer;
+    float: right;
+  }
+
+  &-filename {
+    font-size: @font-size-large;
+    color: @text-color;
+    margin-right: 40px;
+  }
+
+  &-tips {
+    margin-bottom: 1em;
+    font-size: @font-size;
+    color: @text-color-light;
+    word-break: break-all;
+  }
+}
+

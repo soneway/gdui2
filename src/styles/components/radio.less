@@ -1,0 +1,64 @@
+@import "../utils/index";
+.gd-radio {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    input {
+      & + span {
+        box-shadow: 0 0 0 1px @primary-color;
+      }
+    }
+  }
+
+  input {
+    // 隐藏radio
+    display: none;
+
+    // 未选中
+    & + span {
+      .transition;
+      .inline-block-middle;
+      content: "";
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      overflow: hidden;
+      box-shadow: 0 0 0 1px @border-color;
+      border-radius: 50%;
+    }
+
+    // 选中
+    &:checked + span {
+      background: @primary-color;
+      box-shadow: 0 0 0 0.2em #fff inset, 0 0 0 1px @primary-color, 0 0 0 2px fade(@primary-color, 30%);
+    }
+  }
+
+  // 小号
+  &-small {
+    font-size: @checkbox-size-small;
+  }
+
+  // 大号
+  &-large {
+    font-size: @checkbox-size-large;
+  }
+
+  // 特大号
+  &-larger {
+    font-size: @checkbox-size-larger;
+  }
+
+  // 禁用
+  &-disabled {
+    .radio-disabled;
+  }
+
+  // 只读
+  &-readonly {
+    .readonly;
+  }
+
+}
