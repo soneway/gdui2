@@ -2,12 +2,12 @@ module.exports = {
   host: '127.0.0.1',
   port: '8405',
   title: 'gdui2',
-  base: '/gdui/gyzwfw/gdui2/',
+  base: '/gdui2/docs-dist/',
   lastUpdated: 'Last Updated',
   themeConfig: {
     nav: [
       { text: '指南', link: '/guide/start' },
-      { text: '表单引擎', link: 'http://developers.soneway.com.cn/gyzwfw/form-engine/guide/start.html' },
+      { text: '表单引擎', link: 'https://soneway.github.io/form-engine/docs-dist/guide/start.html' },
     ],
     sidebar: [
       {
