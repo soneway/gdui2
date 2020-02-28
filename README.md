@@ -1,31 +1,28 @@
 ## 介绍
-gdui2是基于vue研发的UI组件库
-
-## 准备动作
-
-### 安装依赖
-```bash
-npm i
-```
+gdui2是基于vue研发的UI组件库, 类似element-ui
 
 ## 进入开发
 
-### 开发
+### 第1步: 安装依赖
 ```bash
-npm run dev
+npm i @soneway/gdui2
 ```
 
-### 打包文档
-```bash
-npm run pack
+### 第2步: js中注册组件
+```javascript
+import Vue from 'vue';
+import UI from '@soneway/gdui2';
+Vue.use(UI);
 ```
 
-### 打包组件库代码
-```bash
-npm run dist
+### 第3步: less中引用样式
+```less
+@import "~@soneway/gdui2/dist/css/index.css";
 ```
 
-### lint代码
-```bash
-npm run lint
+### 第4步: html中使用组件
+```html
+<gd-icon></gd-icon>
 ```
+
+详情请参考: [gdui2文档](https://soneway.github.io/gdui2/docs-dist/guide/start.html)
